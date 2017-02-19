@@ -1,6 +1,7 @@
 /**
  * Created by qiankun on 2017/2/18.
  */
+/*
 var express = require('express');
 var app = express();
 var request = require('request');
@@ -16,3 +17,20 @@ app.get('/', function(req, res){
     })
 });
 app.listen(3000);
+*/
+
+
+
+
+var accounts = require('./config').accounts;
+var task = require('./controller/task');
+var autoCheckIn = require('./controller/autoCheckIn');
+
+// 定时执行
+/*task({h: [18], m: [0]}, function () {
+    accounts.forEach(function (account) {
+        autoCheckIn(account);
+    });
+});*/
+autoCheckIn(accounts[0]);
+console.log('======', '自动签到服务运行中..', '======');
