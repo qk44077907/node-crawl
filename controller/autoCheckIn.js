@@ -3,7 +3,7 @@
  */
 var request = require('superagent');
 //var sendEmail = require('./sendEmail');
-var request2 = require('request');
+//var request2 = require('superagent');
 
 var headers = {
     Accept: 'application/json, text/javascript, */*; q=0.01',
@@ -79,7 +79,7 @@ function AutoCheckIn(account) {
            console.log(res.text);
 
         })
-    /*request
+    /*superagent
         .post('http://passport.vpgame.com/home/checkVerify')
         .send({
             Register_username:'qkg99999994',
